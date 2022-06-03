@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/GameConfigUI.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Player/Player2Select.png" type="Texture" id=3]
+[ext_resource path="res://Player/Player3Select.png" type="Texture" id=4]
+[ext_resource path="res://Player/Player5Select.png" type="Texture" id=5]
+[ext_resource path="res://Player/Player4Select.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="GameConfigUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="SelectPlayerLabel" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 7.0
+margin_right = 211.0
+margin_bottom = 23.0
+rect_scale = Vector2( 1.3, 1.3 )
+custom_fonts/font = SubResource( 1 )
+text = "Select Player"
+
+[node name="Player2Button" type="TextureButton" parent="."]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 40.0
+margin_bottom = 99.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 3 )
+
+[node name="Player3Button" type="TextureButton" parent="."]
+margin_left = 88.0
+margin_top = 64.0
+margin_right = 120.0
+margin_bottom = 99.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 4 )
+
+[node name="Player4Button" type="TextureButton" parent="."]
+margin_left = 168.0
+margin_top = 64.0
+margin_right = 200.0
+margin_bottom = 99.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 6 )
+
+[node name="Player5Button" type="TextureButton" parent="."]
+margin_left = 248.0
+margin_top = 64.0
+margin_right = 280.0
+margin_bottom = 99.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 5 )
+
+[connection signal="pressed" from="Player2Button" to="." method="_on_Player2Button_pressed"]
+[connection signal="pressed" from="Player3Button" to="." method="_on_Player3Button_pressed"]
+[connection signal="pressed" from="Player4Button" to="." method="_on_Player4Button_pressed"]
+[connection signal="pressed" from="Player5Button" to="." method="_on_Player5Button_pressed"]
